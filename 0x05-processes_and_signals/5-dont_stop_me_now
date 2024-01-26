@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script stops the 'To infinity and beyond' process
+
+pkill -f 'To infinity and beyond'

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script stops the 'To infinity and beyond' process without using kill or killall
+
+pid=$(pgrep -o 'To infinity and beyond')
+kill -SIGTERM "$pid"

@@ -3,3 +3,4 @@
 
 pid=$(pgrep -o 'To infinity and beyond')
 kill -SIGTERM "$pid"
+

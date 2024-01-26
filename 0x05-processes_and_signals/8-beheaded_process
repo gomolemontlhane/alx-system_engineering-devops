@@ -2,3 +2,4 @@
 # This script kills the 'Highlander' process
 
 pkill -f 'Highlander'
+

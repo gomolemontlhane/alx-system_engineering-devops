@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script pings an IP address passed as an argument and displays the results.
+# Accepts a string as an argument and pings the IP 5 times.
+# Displays a usage message if no argument is passed.
+
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 {IP_ADDRESS}"
+    exit 1
+fi
+
+ip_address=$1
+
+# Ping the IP address 5 times
+ping -c 5 "$ip_address"
+

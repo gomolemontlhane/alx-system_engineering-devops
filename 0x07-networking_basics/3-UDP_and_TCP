@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script answers questions about UDP and TCP protocols.
+# It explains the characteristics of data transfer using these protocols.
+
+Which statement is correct for the TCP box:
+Answer: It is a protocol that is transferring data in a slow way but surely
+
+Which statement is correct for the UDP box:
+Answer: It is a protocol that is transferring data in a fast way and might lose data along in the process
+
+Which statement is correct for the TCP worker:
+Answer: Have you received boxes x, y, z?
+

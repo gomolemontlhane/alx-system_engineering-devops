@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script displays listening ports, showing PID and program names.
+# It provides information about active Internet connections and UNIX domain sockets.
+
+# Display active Internet connections with PID and program names
+echo "Active Internet connections (only servers)"
+echo "Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name"
+netstat -tuln | awk '$6 == "LISTEN" {print $1, $4, $7}' | while read proto local foreign; do
+    pid=$(lsof -i ${proto,,}:"$local" | tail -n +2 | awk '{print $2}')
+    name=$(ps -p "$pid" -o comm= 2>/dev/null)
+    printf "%-10s %-23s %-23s %-11s %-s\n" "$proto" "$local" "$foreign" "LISTEN" "$pid/$name"
+done
+
+# Display active UNIX domain sockets with PID and program names
+echo -e "\nActive UNIX domain sockets (only servers)"
+echo "Proto RefCnt Flags       Type       State         I-Node   PID/Program name    Path"
+netstat -xl | awk '$1 == "Active" && $2 == "UNIX" {flag=1; next} flag {print $1, $2, $3, $4, $5, $6}' | while read proto refcnt flags type state inode; do
+    pid=$(lsof -U -a -t -i ${proto,,}:"$inode" 2>/dev/null)
+    name=$(ps -p "$pid" -o comm= 2>/dev/null)
+    printf "%-10s %-8s %-12s %-11s %-8s %-s\n" "$proto" "$refcnt" "$flags" "$type" "$state" "$pid/$name"
+done
+

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script answers questions about MAC and IP addresses.
+# It provides information about the unique identifiers for network interfaces.
+
+What is a MAC address?
+Answer: The unique identifier of a network interface
+
+What is an IP address?
+Answer: Is to devices connected to a network what postal address is to houses
+

@@ -2,9 +2,31 @@
 # This script answers questions about MAC and IP addresses.
 # It provides information about the unique identifiers for network interfaces.
 
-What is a MAC address?
-Answer: The unique identifier of a network interface
+echo "What is a MAC address?"
+echo "1. The name of a network interface"
+echo "2. The unique identifier of a network interface"
+echo "3. A network interface"
 
-What is an IP address?
-Answer: Is to devices connected to a network what postal address is to houses
+read -p "Enter your choice (1, 2, or 3): " choice
+
+case $choice in
+    1) echo "Incorrect. A MAC address is not the name of a network interface.";;
+    2) echo "Correct! A MAC address is the unique identifier of a network interface.";;
+    3) echo "Incorrect. A MAC address is not a network interface itself.";;
+    *) echo "Invalid choice.";;
+esac
+
+echo -e "\nWhat is an IP address?"
+echo "1. Is to devices connected to a network what postal address is to houses"
+echo "2. The unique identifier of a network interface"
+echo "3. Is a number that network devices use to connect to networks"
+
+read -p "Enter your choice (1, 2, or 3): " choice
+
+case $choice in
+    1) echo "Correct! An IP address is like a postal address for devices connected to a network.";;
+    2) echo "Incorrect. The unique identifier of a network interface is the MAC address.";;
+    3) echo "Incorrect. An IP address is more than just a number; it serves as a network address.";;
+    *) echo "Invalid choice.";;
+esac
 

@@ -2,12 +2,45 @@
 # This script answers questions about different types of networks.
 # It provides information about LAN, WAN, and Internet connections.
 
-What type of network a computer in local is connected to?
-Answer: LAN
+echo "What type of network a computer in local is connected to?"
+echo "1. Internet"
+echo "2. WAN"
+echo "3. LAN"
 
-What type of network could connect an office in one building to another office in a building a few streets away?
-Answer: WAN
+read -p "Enter your choice (1, 2, or 3): " choice
 
-What network do you use when you browse www.google.com from your smartphone (not connected to the Wifi)?
-Answer: Internet
+case $choice in
+    1) echo "Incorrect. A computer in local is connected to LAN.";;
+    2) echo "Incorrect. WAN connects LANs together.";;
+    3) echo "Correct! A computer in local is connected to LAN.";;
+    *) echo "Invalid choice.";;
+esac
+
+echo -e "\nWhat type of network could connect an office in one building to another office in a building a few streets away?"
+echo "1. Internet"
+echo "2. WAN"
+echo "3. LAN"
+
+read -p "Enter your choice (1, 2, or 3): " choice
+
+case $choice in
+    1) echo "Incorrect. Internet connects various networks, but not specific offices in a building.";;
+    2) echo "Correct! WAN (Wide Area Network) could connect offices in different buildings or locations.";;
+    3) echo "Incorrect. LAN is for local connections within a building.";;
+    *) echo "Invalid choice.";;
+esac
+
+echo -e "\nWhat network do you use when you browse www.google.com from your smartphone (not connected to the Wifi)?"
+echo "1. Internet"
+echo "2. WAN"
+echo "3. LAN"
+
+read -p "Enter your choice (1, 2, or 3): " choice
+
+case $choice in
+    1) echo "Correct! When you browse the internet, you are using the Internet network.";;
+    2) echo "Incorrect. WAN typically involves larger-scale connections, not individual smartphone browsing.";;
+    3) echo "Incorrect. LAN is for local connections within a building.";;
+    *) echo "Invalid choice.";;
+esac
 

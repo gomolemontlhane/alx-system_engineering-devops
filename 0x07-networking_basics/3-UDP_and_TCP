@@ -1,13 +1,42 @@
 #!/usr/bin/env bash
 # This script answers questions about UDP and TCP protocols.
-# It explains the characteristics of data transfer using these protocols.
+# It provides information about the characteristics of each protocol.
 
-Which statement is correct for the TCP box:
-Answer: It is a protocol that is transferring data in a slow way but surely
+echo "Let’s fill the empty parts in the drawing above."
 
-Which statement is correct for the UDP box:
-Answer: It is a protocol that is transferring data in a fast way and might lose data along in the process
+echo -e "\nWhich statement is correct for the TCP box:"
+echo "1. It is a protocol that is transferring data in a slow way but surely"
+echo "2. It is a protocol that is transferring data in a fast way and might lose data along in the process"
 
-Which statement is correct for the TCP worker:
-Answer: Have you received boxes x, y, z?
+read -p "Enter your choice (1 or 2): " choice
+
+case $choice in
+    1) echo "Incorrect. TCP is a protocol that transfers data in a reliable and ordered manner.";;
+    2) echo "Correct! TCP is a protocol that transfers data in a fast way and ensures data integrity.";;
+    *) echo "Invalid choice.";;
+esac
+
+echo -e "\nWhich statement is correct for the UDP box:"
+echo "1. It is a protocol that is transferring data in a slow way but surely"
+echo "2. It is a protocol that is transferring data in a fast way and might lose data along in the process"
+
+read -p "Enter your choice (1 or 2): " choice
+
+case $choice in
+    1) echo "Incorrect. UDP is a protocol that transfers data quickly but doesn't guarantee delivery.";;
+    2) echo "Correct! UDP is a protocol that transfers data in a fast way and might lose data along the process.";;
+    *) echo "Invalid choice.";;
+esac
+
+echo -e "\nWhich statement is correct for the TCP worker:"
+echo "1. Have you received boxes x, y, z?"
+echo "2. May I increase the rate at which I am sending you boxes?"
+
+read -p "Enter your choice (1 or 2): " choice
+
+case $choice in
+    1) echo "Incorrect. The correct statement for the TCP worker is: May I increase the rate at which I am sending you boxes?";;
+    2) echo "Correct! The TCP worker can dynamically adjust the rate at which it sends data based on network conditions.";;
+    *) echo "Invalid choice.";;
+esac
 

@@ -45,11 +45,3 @@ Gomolemo Ntlhane
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-
-<p float="left">
-  <img src="https://github.com/gomolemontlhane/alx-system_engineering-devops/blob/main/0x09-web_infrastructure_design/0-simple_web_stack.png" width="100" />
-  <img src="https://github.com/gomolemontlhane/alx-system_engineering-devops/blob/main/0x09-web_infrastructure_design/1-distributed_web_structure%20.png" width="100" />
-<img src="https://github.com/gomolemontlhane/alx-system_engineering-devops/blob/main/0x09-web_infrastructure_design/2-secured_and_monitored_web_infrastructure.png" width="100" />
-</p>
-

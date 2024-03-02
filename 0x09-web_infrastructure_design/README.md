@@ -34,9 +34,9 @@ In this repository, you'll find solutions for various tasks focusing on designin
 
 ## Screenshots
 
-0-simple_web_stack.png
-1-distributed_web_structure .png
-2-secured_and_monitored_web_infrastructure.png
+![0-simple_web_stack.png](https://github.com/gomolemontlhane/alx-system_engineering-devops/blob/main/0x09-web_infrastructure_design/0-simple_web_stack.png)
+![1-distributed_web_structure .png](https://github.com/gomolemontlhane/alx-system_engineering-devops/blob/main/0x09-web_infrastructure_design/1-distributed_web_structure%20.png)
+![2-secured_and_monitored_web_infrastructure.png](https://github.com/gomolemontlhane/alx-system_engineering-devops/blob/main/0x09-web_infrastructure_design/2-secured_and_monitored_web_infrastructure.png)
 
 ## Author
 

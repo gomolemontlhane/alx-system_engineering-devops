@@ -34,7 +34,9 @@ In this repository, you'll find solutions for various tasks focusing on designin
 
 ## Screenshots
 
-Include screenshots of whiteboard diagrams for each task here.
+0-simple_web_stack.png
+1-distributed_web_structure .png
+2-secured_and_monitored_web_infrastructure.png
 
 ## Author
 

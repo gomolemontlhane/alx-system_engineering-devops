@@ -5,4 +5,3 @@ exec { 'killmenow':
   path        => '/usr/bin',
   refreshonly => true,
 }
-

@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 # This script checks if Nginx is installed and configures it to use the default site configuration
-
-set -euo pipefail
-
 # Check if Nginx is installed
 if ! command -v nginx &> /dev/null; then
     echo "Nginx is not installed. Installing..."

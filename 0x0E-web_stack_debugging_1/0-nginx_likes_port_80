@@ -21,3 +21,4 @@ else
     echo "Nginx configuration file not found."
     exit 1
 fi
+

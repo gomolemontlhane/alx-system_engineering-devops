@@ -1,20 +1,22 @@
 #!/usr/bin/env bash
-set -e
+# This script checks if Nginx is installed and configures it to use the default site configuration
 
-# Install Nginx if not already installed
+set -euo pipefail
+
+# Check if Nginx is installed
 if ! command -v nginx &> /dev/null; then
     echo "Nginx is not installed. Installing..."
     sudo apt update
     sudo apt install nginx -y
 fi
 
-# Remove default Nginx site configuration
+# Remove default Nginx site configuration if exists
 default_config="/etc/nginx/sites-enabled/default"
 if [ -f "$default_config" ]; then
     sudo rm "$default_config"
 fi
 
-# Symlink the default configuration to sites-enabled
+# Create symbolic link to default configuration
 sudo ln -sf /etc/nginx/sites-available/default "$default_config"
 
 # Restart Nginx to apply changes

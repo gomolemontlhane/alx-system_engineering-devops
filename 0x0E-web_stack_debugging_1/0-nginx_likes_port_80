@@ -19,3 +19,4 @@ sudo ln -sf /etc/nginx/sites-available/default "$default_config"
 # Restart Nginx to apply changes
 sudo service restart nginx
 echo "Nginx configuration updated and service restarted."
+

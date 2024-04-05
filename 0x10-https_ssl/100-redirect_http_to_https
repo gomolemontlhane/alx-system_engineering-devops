@@ -47,5 +47,5 @@ frontend clickviral-frontend-https
 
 backend gomolemo-backend
         balance roundrobin
-        server 151666-web-01 52.3.242.240:80 check
-        server 151666-web-02 52.23.213.44:80 check
+	server 524854-web-01 100.25.190.21:80 check
+        server 524854-web-02 54.160.77.90:80 check

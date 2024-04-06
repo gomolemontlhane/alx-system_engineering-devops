@@ -45,7 +45,7 @@ frontend gomolemo-frontend-https
         http-request set-header X-Forwarded-Proto https
         default_backend clickviral-backend
 
-backend gomolemo-backend
+backend gomolemo-tech-backend
         balance roundrobin
         server 524854-web-01 52.3.242.240:80 check
         server 524854-web-02 52.23.213.44:80 check

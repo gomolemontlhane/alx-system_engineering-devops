@@ -1,52 +1,30 @@
 #!/usr/bin/python3
-"""
-Script to gather TODO list progress for a given employee ID from a REST API and export to JSON.
-"""
-
-import sys
-import requests
+""" Python to get data from an API and convert to Json"""
+import csv
 import json
+import requests
+import sys
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2 or not sys.argv[1].isdigit():
-        print("Usage: {} <employee_id>".format(sys.argv[0]))
-        sys.exit(1)
 
-    employee_id = int(sys.argv[1])
+if __name__ == '__main__':
+    USER_ID = sys.argv[1]
+    url_to_user = 'https://jsonplaceholder.typicode.com/users/' + USER_ID
+    res = requests.get(url_to_user)
+    """Documentation"""
+    USERNAME = res.json().get('username')
+    """Documentation"""
+    url_to_task = url_to_user + '/todos'
+    res = requests.get(url_to_task)
+    tasks = res.json()
 
-    # Fetch user info
-    user_response = requests.get('https://jsonplaceholder.typicode.com/users/{}'.format(employee_id))
-    user_data = user_response.json()
-
-    if not user_data:
-        print("No employee found with ID {}".format(employee_id))
-        sys.exit(1)
-
-    employee_name = user_data.get('name')
-
-    # Fetch todos
-    todos_response = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'.format(employee_id))
-    todos_data = todos_response.json()
-
-    if not todos_data:
-        print("No TODOs found for employee ID {}".format(employee_id))
-        sys.exit(0)
-
-    # Prepare JSON file name based on employee ID
-    json_filename = '{}.json'.format(employee_id)
-
-    # Prepare data in JSON format
-    json_data = {str(employee_id): []}
-    for task in todos_data:
-        task_dict = {
-            "task": task.get('title'),
-            "completed": task.get('completed'),
-            "username": employee_name
-        }
-        json_data[str(employee_id)].append(task_dict)
-
-    # Write data to JSON file
-    with open(json_filename, mode='w') as jsonfile:
-        json.dump(json_data, jsonfile)
-
-    print("Data exported to {}".format(json_filename))
+    dict_data = {USER_ID: []}
+    for task in tasks:
+        TASK_COMPLETED_STATUS = task.get('completed')
+        TASK_TITLE = task.get('title')
+        dict_data[USER_ID].append({
+                                  "task": TASK_TITLE,
+                                  "completed": TASK_COMPLETED_STATUS,
+                                  "username": USERNAME})
+    """print(dict_data)"""
+    with open('{}.json'.format(USER_ID), 'w') as f:
+        json.dump(dict_data, f)

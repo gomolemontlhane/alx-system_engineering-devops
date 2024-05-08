@@ -4,6 +4,7 @@
 """
 import requests
 
+
 def top_ten(subreddit):
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {'User-Agent': 'MyAPI/0.0.1'}
@@ -17,6 +18,7 @@ def top_ten(subreddit):
     else:
         print(None)
 
+
 # For testing this function from command line
 if __name__ == "__main__":
     import sys
@@ -24,4 +26,3 @@ if __name__ == "__main__":
         print("Please pass an argument for the subreddit to search.")
     else:
         top_ten(sys.argv[1])
-

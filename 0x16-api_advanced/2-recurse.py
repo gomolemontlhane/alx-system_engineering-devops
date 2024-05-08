@@ -4,6 +4,7 @@
 """
 import requests
 
+
 def recurse(subreddit, hot_list=[], after=None):
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {'User-Agent': 'MyAPI/0.0.1'}
@@ -23,6 +24,7 @@ def recurse(subreddit, hot_list=[], after=None):
     else:
         return None
 
+
 # For testing this function from command line
 if __name__ == "__main__":
     import sys
@@ -34,4 +36,3 @@ if __name__ == "__main__":
             print(len(result))
         else:
             print("None")
-

@@ -21,8 +21,8 @@ frontend http_front
 
 backend http_back
     balance roundrobin
-    server web-01 54.175.120.195:80 check
-    server web-02 54.226.17.144:80 check
+    server web-01 54.87.213.1:80 check
+    server web-02 100.25.48.10:80 check
 EOF
 # Enable HAProxy init script
 sudo systemctl enable haproxy
